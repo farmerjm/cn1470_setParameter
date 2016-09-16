@@ -1,0 +1,3 @@
+Simple control programs for Caen N1470, written using the CAEN HV Wrapper Library.
+
+COMPILE INSTRUCTIONS:  download and install CAEN HV wrapper lib and place the header in ./include/.
