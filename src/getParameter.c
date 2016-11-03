@@ -96,7 +96,7 @@ int main(int argc, char* argv[])
 
   for (i=0; i<numChannels;i++)
   {
-    ret = CAENHV_GetChParam(handle, 0, inParam, 1, &ch[i], fparam);
+    ret = CAENHV_GetChParam(handle, 0, inParam, 1, &ch[i], &fparam);
 
     if (ret != CAENHV_OK) printf("CAENHV_GetChParam: %s (num. %d)\n\n", CAENHV_GetError(handle), ret);
 

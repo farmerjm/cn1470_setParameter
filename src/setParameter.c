@@ -170,10 +170,6 @@ int main(int argc, char* argv[])
 
     float setParam=atof(argv[2]);
 
-    //ret = CAENHV_GetChParamProp(handle, 0, 0, inParam, "Type", &result);
-    //printf("\nCAENHV_GetChParamProp: %s (num. %d)\n\n", CAENHV_GetError(handle), ret);
-
-    //if (ret != CAENHV_OK) printf("Error %d GetChParamProp!", ret);
     
     if (!strcmp(inParam, "Pw") && (setParam == 1)) 
     {
@@ -182,7 +178,6 @@ int main(int argc, char* argv[])
       CAENHV_SetChParam(handle, 0, "VSet", numChannels, ch, &zeroVolts); 
     }
 
-    //CAENHV_SetChParam(handle, 0, inParam, numChannels, ch, &setParam);
     for(i=0;i<numChannels;i++)
     {
       CAENHV_SetChParam(handle, 0, inParam, 1, &ch[i], &setParam);
@@ -202,22 +197,6 @@ int main(int argc, char* argv[])
       }
     }
 
-/*    else
-    {
-      if (result == PARAM_TYPE_NUMERIC)
-      {
-        fparam=malloc(sizeof(float));
-        ret = CAENHV_GetChParam(handle, 0, inParam, 1, ch1, fparam); 
-      }
- 
-  else
-      {
-        lparam=malloc(sizeof(long));
-        ret = CAENHV_GetChParam(handle, 0, inParam, 1, ch1, lparam);
-      }
-    }
-*/
-  
   return 0;
 
 }
