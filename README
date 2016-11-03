@@ -1,3 +1,11 @@
-Simple control programs for Caen N1470, written using the CAEN HV Wrapper Library.
+Simple control programs for Caen N1470, written using the CAEN HV Wrapper Library.  Written for use in the UChicago photon lab to automate gain calibration of photomultiplier tubes.
+
+The module can be controlled from the command line by the functions:
+
+  ./getParameter param channels
+  ./setParameter param channels
+
 
 COMPILE INSTRUCTIONS:  download and install CAEN HV wrapper lib and place the header in ./include/.
+
+* A modified branch of this code is in use at the FAST prototype experiment at the TA Black Rock Mesa site.
