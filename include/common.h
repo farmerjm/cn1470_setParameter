@@ -13,7 +13,7 @@ char* params[5] = {"IMon", "VSet", "ISet", "MaxV", "Pw"};
 int handle = -1;
 const unsigned short ch1[1]={0};
 
-char[100] connString="_9600_8_1_none_0";
+char connString[100]="_9600_8_1_none_0";
 
 int readConfig()
 {
@@ -24,7 +24,7 @@ int readConfig()
   return val;
 }
 
-char[] buildConnectionString()
+char* buildConnectionString()
 {
   char portNumber=readConfig()+'0';
   char port[8] ="ttyUSBx";

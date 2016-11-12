@@ -131,7 +131,7 @@ int main(int argc, char* argv[])
   }
  
   printf("Connecting to module...\n");
-  char connString[] = buildConnectionString();
+  char* connString = buildConnectionString();
   ret = CAENHV_InitSystem(6, 5, connString, "", "", 
 &handle);
   

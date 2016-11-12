@@ -16,7 +16,7 @@ int main(int argc, char* argv[])
   // Connect:
   //
  
-  char connString[] = buildConnectionString();
+  char* connString = buildConnectionString();
   ret = CAENHV_InitSystem(6, 5, connString, "", "", 
 &handle);
 
