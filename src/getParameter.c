@@ -1,16 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "../include/CAENHVWrapper.h"
-
-CAENHVRESULT ret;
-void* result;
-float* fparam = NULL;
-long* lparam = NULL;
-char* params[5] = {"IMon", "VSet", "ISet", "MaxV", "Pw"};
-
-int handle = -1;
-const unsigned short ch1[1]={0};
+#include "common.h"
 
 int main(int argc, char* argv[])
 {
@@ -27,8 +15,11 @@ int main(int argc, char* argv[])
   //
   // Connect:
   //
-  ret = CAENHV_InitSystem(6, 5, "ttyUSB2_9600_8_1_none_0", "", "", &handle);
  
+  char connString[] = buildConnectionString();
+  ret = CAENHV_InitSystem(6, 5, connString, "", "", 
+&handle);
+
   if (ret != CAENHV_OK) 
   {
     fprintf(stderr, "ERROR:  Connection failed. Exiting process.\n");
